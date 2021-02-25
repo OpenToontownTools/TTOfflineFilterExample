@@ -1,0 +1,8 @@
+{
+	"display_name" : "Red Tint",
+	"identifier" : "drewcification:red",
+	"mw_identifiers" : ["example", "red", "redtint"],
+	"fragment" : "filters/tt_sha_post_example.frag",
+	"vertex" : "phase_3/shaders/tt_sha_post_generic.vert",
+	"type" : "postprocess"
+}

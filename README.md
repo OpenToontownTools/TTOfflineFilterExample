@@ -4,6 +4,7 @@
 * This can be achieved by adding the shader files into the filters directory
 
 ![image](https://user-images.githubusercontent.com/31282527/109550459-4fab1b80-7a9d-11eb-8f56-30ac40db6904.png)
+
 (An example of a post process shader with a fragment shader)
 
 # Filter Types

@@ -21,6 +21,13 @@
 * Post process shaders are computed after the 3D scene is rendered, and is applied to the screen itself, as opposed to the 3D objects. The majority of filters would be done in this method.
 * Post process shaders never have a reason for a custom vertex shader file, so the vertex file should always be specified as `"phase_3/shaders/tt_sha_post_generic.vert"`
 * In Toontown Offline v1.0.5.1, the Underwater filter uses this method.
+* As of Toontown Offline v1.0.5.1, post process shaders have access to the color and depth buffers. Currently, these are required to be specified as inputs, even if one of those is not going to be used.
+* All post process fragment shaders are required to have the following inputs, even if they aren't used:
+	* Color texture (`uniform sampler2D color_texture`)
+	* Depth texture (`uniform sampler2D depth_texture`)
+	* Screen resolution (`uniform vec2 resolution`)
+* The most common other input (which is not required) is the `uniform float osg_FrameTime` which, as described by [Panda3D's manual](https://docs.panda3d.org/1.10/python/programming/shaders/list-of-glsl-inputs), "reports the frame time of the current frame, for animations."
+
 
 ## JSON File
 * Each filter needs a JSON file. This file can be placed alongside your shader vertex and fragment files in the `filters` folder in your Toontown Offline game directory (which can be accessed by pressing the ![directory](https://user-images.githubusercontent.com/31282527/109549132-8a13b900-7a9b-11eb-879a-17c2c9d646a8.png) button on the launcher.
